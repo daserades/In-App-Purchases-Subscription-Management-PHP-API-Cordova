@@ -1,35 +1,36 @@
-# In App Purchases Subscription Management | PHP API & Cordova 
+<p># In App Purchases Subscription Management | PHP API &amp; Cordova&nbsp;</p>
 
-PHP Api
-/* Register */
-POST
-URL: localhost/api/register
-Queries: uid,appid,language,operatingsystem
-/* Google Api */
-POST
-URL: localhost/api/googleapi
-Queries: q,client-token,receipt
-/* Purchase */
-POST
-URL: localhost/api/purchase
-Queries: uid,appid,language,operatingsystem,type,client-token
-/* Check Subscription */
-POST
-URL: localhost/api/checksubscription
-Queries: uid,appid,language,operatingsystem,client-token
-/* Worker and Cron URL */
-GET
-URL: localhost/api/worker
-/* Report */
-GET
-URL: localhost/api/report
-Queries: minId,maxId,appId
+<p>PHP Api<br />
+/* Register */<br />
+POST<br />
+URL: localhost/api/register<br />
+Queries: uid,appid,language,operatingsystem<br />
+/* Google Api */<br />
+POST<br />
+URL: localhost/api/googleapi<br />
+Queries: q,client-token,receipt<br />
+/* Purchase */<br />
+POST<br />
+URL: localhost/api/purchase<br />
+Queries: uid,appid,language,operatingsystem,type,client-token<br />
+/* Check Subscription */<br />
+POST<br />
+URL: localhost/api/checksubscription<br />
+Queries: uid,appid,language,operatingsystem,client-token<br />
+/* Worker and Cron URL */<br />
+GET<br />
+URL: localhost/api/worker<br />
+/* Report */<br />
+GET<br />
+URL: localhost/api/report<br />
+Queries: minId,maxId,appId</p>
 
-Cordova Android Example
-Directory: ./Cordova-Android-Example/
-Example APP: ./Cordova-Android-Example/app-debug.apk
+<p>Cordova Android Example<br />
+Directory: ./Cordova-Android-Example/<br />
+Example APP: ./Cordova-Android-Example/app-debug.apk</p>
 
-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+<p>*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*<br />
+&nbsp;</p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
