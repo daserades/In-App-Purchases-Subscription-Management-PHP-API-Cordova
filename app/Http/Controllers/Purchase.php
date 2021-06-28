@@ -27,11 +27,11 @@ class Purchase extends Controller
       }
 	}
 	public function Subscription(){
-		$CheckSubscription = DB::table('subscriptions')->where('uid', $_POST["uid"])->first(); 
+		$CheckSubscription = DB::table('subscriptions')->where('uid', $_POST["uid"])->where('appId', $_POST["appid"])->first(); 
 		if($CheckSubscription!==null){ 
 			if($_POST["action"]=="delete"){
 				/* Delete Subscription */
-				DB::table('subscriptions')->where('uid', $_POST["uid"])->delete();
+				DB::table('subscriptions')->where('uid', $_POST["uid"])->where('appId', $_POST["appid"])->delete();
 				$this->json["response"]="Your subscription has been cancelled."; 
 				$this->json["Check"]="Subscription"; 
 				$this->json["status"]=false;

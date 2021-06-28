@@ -20,13 +20,13 @@ class CheckSubscription extends Controller
             $this->json["response"]="Invalid Client Token"; 
             return $this->Screen();
         }
-        $CheckSubscription = (array) DB::table('subscriptions')->where('uid', $_POST["uid"])->first(); 
+        $CheckSubscription = (array) DB::table('subscriptions')->where('uid', $_POST["uid"])->where('appId', $_POST["appid"])->first(); 
         
         if(!empty($CheckSubscription["expire-date"])){
             $timecheck = strtotime($CheckSubscription["expire-date"]);
             if(time()>$timecheck){
                 /* Time is over */
-                DB::table('subscriptions')->where('uid', $_POST["uid"])->delete();
+                DB::table('subscriptions')->where('uid', $_POST["uid"])->where('appId', $_POST["appid"])->delete();
                 $this->json["response"]="Abonelik Süreniz Dolmuş"; 
                 $this->json["Subscription"]=0;
                 $this->json["expire-date"]=0;

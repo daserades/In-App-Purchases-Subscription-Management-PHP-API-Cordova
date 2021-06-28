@@ -8,7 +8,7 @@ class Register extends Controller
 {
     public $json = array(); 
     public function index(){     
-		 $CheckDevice = DB::table('registers')->where('uid', $_POST["uid"])->first(); 
+		 $CheckDevice = DB::table('registers')->where('uid', $_POST["uid"])->where('appId', $_POST["appid"])->first(); 
         if($CheckDevice!==null){
             $this->json["Response"]="OK"; 
             $this->json["ApiStatus"]="Online";
