@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+-->
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <title>Php Api</title>
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+		<nav>
+		  <div class="nav-wrapper header light-blue darken-2">
+		   <a href="index.html" class="brand-logo center glitch" data-text="Teknasyon PHP Api" style="font-size:16px;">Teknasyon PHP Api</a> 
+		  </div>
+	    </nav>
+        <div class="appscreen">
+		
+		<div class=""></div>
+		<div class="part">
+		<div class="desc">Process: <span class="process">...</span></div>
+		<div class="desc">Api Status: <span class="apistatus">OFLINE</span></div>
+		<div class="desc">
+		<div>Device Information: </div>
+		<div>Uid: <span class="device_uid">...</span> | AppId: <span class="device_appId">...</span> </div>
+		<div> Language: <span class="device_Language">...</span> | Operating System: <span class="device_OperatingSystem">...</span> </div>
+		</div>
+		</div>
+		<div class="part">
+		<div class="clienttoken"></div>
+		<div class="register"></div>
+		</div>
+		
+		<div class="storescreen"></div>
+        
+		<div style="margin-top:90px;margin-bottom:90px">
+		<textarea id="myTextarea" class="log"></textarea>
+		</div>
+		</div>
+        <script src="cordova.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="./cache.js"></script>
+		<script src="./functions.js"></script>
+		<script src="./client.js"></script>
+		<script src="./phpApi.js"></script>
+		<script src="./store.js"></script>
+		<script src="./app.js"></script>
+		<script>
+		document.addEventListener("deviceready", onDeviceReady, false);
+		/* Start App */
+		function onDeviceReady() {
+		try {
+			if(device["uuid"]!=null){
+					Cache["App"]["Uid"]=device["uuid"];
+			}
+			if(device["platform"]!=null){
+					Cache["App"]["OperatingSystem"]=device["platform"];
+			}
+		} catch (error) { alert(error); }
+			
+		}
+		App.Load();
+		
+		</script>
+		<style>
+		html,body{margin:0px;padding:0px;}
+		nav{overflow:hidden;}
+		.appscreen{width:90%;margin:auto;height:100%;overflow:auto;}
+		.part{padding:10px 0;border-bottom:1px solid #ddd;}
+		</style>
+    </body>
+</html>
